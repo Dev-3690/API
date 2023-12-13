@@ -1,10 +1,10 @@
+require("dotenv").config();
 const express = require("express")
 const mongoose = require("mongoose")
 const bodyParser = require('body-parser');
 
-
-const app = express()
-const PORT = 3000
+const app = express() 
+const PORT = 3000 
 const api_routes = require("./routes/routes")
 const MONGO_URL = "mongodb+srv://devkiranchauhan:lcABBpmjxGDhyTRA@cluster0.bngx23s.mongodb.net/?retryWrites=true&w=majority"
 

@@ -2,8 +2,9 @@ const express = require("express")
 const router = express.Router()
 const ctrl = require("../controllers/dynamo")
 const ctrl2 = require("../controllers/mongo")
-const ScheduleCont = require("../controllers/Schedules")
-const productCont = require("../controllers/products")
+const ScheduleCont = require("../controllers/Schedules_cont")
+const productCont = require("../controllers/products_cont")
+const ReportCont = require("../controllers/reports_cont")
 
 
 
@@ -26,6 +27,10 @@ router.route("/editSchedule").post(ScheduleCont.editSchedule)
 
 router.route("/insertProduct").post(productCont.insertProduct)
 router.route("/fetchProducts").get(productCont.fetchProducts)
+
+router.route("/insertReports").post(ReportCont.insertReports)
+router.route("/fetchReports").get(ReportCont.fetchReports)
+router.route("/fetchConditionalReports").post(ReportCont.fetchConditionalReports)
 
 
 module.exports = router
