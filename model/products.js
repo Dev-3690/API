@@ -6,7 +6,7 @@ const Collection = mongoose.Schema(
             type: String,
         },
         title: {
-            type: String,
+            type: String,   
         },
         subtitle: {
             type: String
