@@ -1,0 +1,14 @@
+on: push
+jobs: 
+  build-node:
+    runs-on: windows
+    container: node:20
+    steps:
+      - run: node --version
+      - run: npm --version
+      - run: node --version
+      - uses: actions/checkout@v4
+      - run: npm install
+      - run: node index.js 
+      
+
