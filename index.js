@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express")
 const mongoose = require("mongoose")
 const bodyParser = require('body-parser');
-
+const cors = require("cors")
 const app = express() 
 const PORT = 3000 
 const api_routes = require("./routes/routes")
@@ -10,6 +10,11 @@ const MONGO_URL = "mongodb+srv://devkiranchauhan:lcABBpmjxGDhyTRA@cluster0.bngx2
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors({
+    origin:"*",
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}));
+
 
 app.use(function(req, res, next) {
     res.setHeader('charset', 'utf-8')

@@ -32,5 +32,4 @@ router.route("/insertReports").post(ReportCont.insertReports)
 router.route("/fetchReports").get(ReportCont.fetchReports)
 router.route("/fetchConditionalReports").post(ReportCont.fetchConditionalReports)
 
-
 module.exports = router
