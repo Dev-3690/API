@@ -5,7 +5,7 @@ const ctrl2 = require("../controllers/mongo")
 const ScheduleCont = require("../controllers/Schedules_cont")
 const productCont = require("../controllers/products_cont")
 const ReportCont = require("../controllers/reports_cont")
-
+const SensorCont = require("../controllers/sensor")
 
 
 router.route("/").get(ctrl.initialPage)
@@ -31,5 +31,8 @@ router.route("/fetchProducts").get(productCont.fetchProducts)
 router.route("/insertReports").post(ReportCont.insertReports)
 router.route("/fetchReports").get(ReportCont.fetchReports)
 router.route("/fetchConditionalReports").post(ReportCont.fetchConditionalReports)
+
+router.route("/insertSensor").post(SensorCont.insertSensor)
+router.route("/fetchSensors").get(SensorCont.fetchSensors)
 
 module.exports = router
